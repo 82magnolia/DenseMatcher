@@ -22,6 +22,7 @@ cd DenseMatcher
 ```
 conda create -n "densematcher" python=3.9
 conda activate densematcher
+conda install cuda -c nvidia/label/cuda-11.8.0
 bash setup.sh
 ```
 

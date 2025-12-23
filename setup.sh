@@ -1,15 +1,15 @@
-export CUDA_HOME="/usr/local/cuda-11.8"
+# export CUDA_HOME="/usr/local/cuda-11.8"
 pip install torch==2.0.1+cu118 torchvision xformers --extra-index-url https://download.pytorch.org/whl/cu118
 pip install diffusers[torch]==0.27.2
 pip install ipympl triton transformers 
 
 # Install local dependencies in editable mode
-pip install -e ./third_party/Mask2Former
+pip install -e ./third_party/Mask2Former --no-build-isolation
 pip install -e ./third_party/ODISE
 pip install -e ./third_party/meshplot
 pip install -e ./third_party/stablediffusion
-pip install -e ./third_party/featup
-pip install -e ./third_party/dift
+pip install -e ./third_party/featup --no-build-isolation
+pip install -e ./third_party/dift --no-build-isolation
 pip install pythreejs torch-tb-profiler
 
 # diff3f dependencies
@@ -24,7 +24,7 @@ pip install igraph==0.11.5 # future verions dont allow integer as vertex names
 pip install pymeshlab==2023.12.post2
 pip install numpy==1.24.1 # needs to be <2
 pip install huggingface-hub==0.25.2
-pip install -e .
+pip install -e . --no-build-isolation
 
 # install pre-commit hook
 cp pre-commit .git/hooks
