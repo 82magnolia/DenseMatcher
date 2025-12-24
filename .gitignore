@@ -2,6 +2,7 @@
 tmp
 DenseCorr3D
 checkpoints
+densematcher_test
 **/*pycache*
 *.zip
 *.pt
