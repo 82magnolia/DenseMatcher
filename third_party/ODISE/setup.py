@@ -77,7 +77,7 @@ setup(
         "diffdist==0.1",
         "nltk>=3.6.2",
         "einops>=0.3.0",
-        "wandb>=0.12.11",
+        # "wandb>=0.12.11",
         # "transformers==4.20.1",  # freeze transformers version for stabliity
         # there is BC breaking in omegaconf 2.2.1
         # see: https://github.com/omry/omegaconf/issues/939
