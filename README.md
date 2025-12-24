@@ -20,10 +20,35 @@ cd DenseMatcher
 ```
 3. Create a conda environment and install dependencies: 
 ```
-conda create -n "densematcher" python=3.9
+conda create -n "densematcher" python=3.10
 conda activate densematcher
 conda install cuda -c nvidia/label/cuda-11.8.0
-bash setup.sh
+
+pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 xformers==0.0.22 --extra-index-url https://download.pytorch.org/whl/cu118
+pip install diffusers[torch]==0.27.2
+pip install ipympl triton transformers 
+
+pip install hatchling
+pip install -e ./third_party/ODISE --no-build-isolation
+pip install -e ./third_party/Mask2Former --no-build-isolation
+pip install -e ./third_party/meshplot
+pip install -e ./third_party/stablediffusion
+pip install -e ./third_party/featup --no-build-isolation
+pip install -e ./third_party/dift --no-build-isolation
+pip install pythreejs torch-tb-profiler
+pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu118_pyt201/download.html
+pip install trimesh rtree "pyglet<2" plyfile meshio robust_laplacian potpourri3d pywavefront
+pip install pytorch-lightning==1.9.5 kornia==0.7.2 pillow==9.3.0 transformers==4.27.0 matplotlib==3.9.3
+pip install jupyter jupyterlab jupyter_contrib_nbextensions notebook==6.5.6
+pip install igraph==0.11.5
+pip install pymeshlab
+
+pip install numpy==1.24.1
+pip install huggingface-hub==0.25.2
+pip install -e . --no-build-isolation
+
+cp pre-commit .git/hooks
+chmod +x .git/hooks/pre-commit
 ```
 
 ## Running Example Notebook(release in progress)
