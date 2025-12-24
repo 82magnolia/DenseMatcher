@@ -22,7 +22,7 @@ cd DenseMatcher
 ```
 conda create -n "densematcher" python=3.10
 conda activate densematcher
-conda install cuda -c nvidia/label/cuda-11.8.0
+# conda install cuda -c nvidia/label/cuda-11.8.0  # No need
 
 pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 xformers==0.0.22 --extra-index-url https://download.pytorch.org/whl/cu118
 pip install diffusers[torch]==0.27.2
